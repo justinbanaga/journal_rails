@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params) # not the final implementation
     if @user.save
-      # handle success
+      flash[:success] = 'Welcome to the Journal App!'
+      redirect_to @user
     else
       render 'new'
     end
