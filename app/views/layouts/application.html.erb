@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JournalAppRails</title>
+    <!-- It creates a custom page title. -->
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,7 +10,6 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
-    <%= vite_stylesheet_tag 'application' %>
     <!--
       If using a TypeScript entrypoint file:
         vite_typescript_tag 'application'
@@ -25,7 +25,7 @@
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+      <%= debug params if Rails.env.development? %>
     </div>
   </body>
 </html>
