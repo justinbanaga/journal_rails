@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) # not the final implementation
+    @user = User.new(user_params)
     if @user.save
       flash[:success] = 'Welcome to the Journal App!'
       redirect_to @user
