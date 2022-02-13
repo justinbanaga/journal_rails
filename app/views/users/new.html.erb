@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 sign-up-form">
+  <div class="col-md-6 col-md-offset-3 form-stylings">
     <%= form_with model: @user, data: { turbo: false } do |f| %>
       <%= render 'shared/error_messages' %>
       <%= f.label :name, class:"form-label" %>
