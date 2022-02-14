@@ -20,6 +20,17 @@ $state-danger-text: #a94442;
 #navbar {
   margin-bottom: 15px;
 }
+
+.navbar-nav {
+  list-style: none;
+  margin-left: 1073px;
+}
+
+#dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
 .form-stylings {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -98,8 +109,8 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  text-decoration: none;
   &:hover {
     color: white;
     text-decoration: none;

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <%= link_to "journal app", root_path, id: "logo" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark"
       aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,35 +13,28 @@
         <li class="nav-item">
           <%= link_to "Help" , help_path, class:"nav-link active" %>
         </li>
-        <% if logged_in? %>
+        <% if logged_in?  %>
           <li class="nav-item">
             <%= link_to "Users" , root_path, class:"nav-link active" %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown dropdown-menu-right">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-              Dropdown link
+              Account
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %></li>
-              <li class="divider"></li>
+            <ul id="dropdown-menu-right" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><%= link_to "Profile", current_user , class: "dropdown-item" %></li>
+              <li><%= link_to "Settings", '#' , class: "dropdown-item" %></li>
+              <li class="drop-divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
               </li>
             </ul>
+          <% else %>
           </li>
-        <% else %>
           <li><%= link_to "Log in", login_path, class:"nav-link active" %></li>
-        <% end  %>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
+        </ul>
+      <% end %>
     </div>
   </div>
 </nav>
