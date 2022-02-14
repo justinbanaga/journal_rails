@@ -1,40 +1,44 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark" id="navbar">
-  <div class="container-fluid">
+  <div class="container-fluid  ">
     <%= link_to "journal app", root_path, id: "logo" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark"
       aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon "></span>
     </button>
-    <div class="collapse navbar-collapse show" id="navbarDark">
-      <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-        <li class="nav-item">
-          <%= link_to "Home" , root_path, class:"nav-link active"  %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Help" , help_path, class:"nav-link active" %>
-        </li>
-        <% if logged_in?  %>
+    <div class="collapse navbar-collapse show   " id="navbarDark">
+      <% if logged_in? %>
+        <ul class="navbar-nav navbar-nav-login me-auto mb-2 mb-xl-0  ">
+        <% else %>
+          <ul class="navbar-nav me-auto mb-2 mb-xl-0 ">
+          <% end %>
           <li class="nav-item">
-            <%= link_to "Users" , root_path, class:"nav-link active" %>
+            <%= link_to "Home" , root_path, class:"nav-link active"  %>
           </li>
-          <li class="nav-item dropdown dropdown-menu-right">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+          <li class="nav-item">
+            <%= link_to "Help" , help_path, class:"nav-link active" %>
+          </li>
+          <% if logged_in?  %>
+            <li class="nav-item">
+              <%= link_to "Users" , "#", class:"nav-link active" %>
+            </li>
+            <li class="nav-item dropdown dropdown-menu-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-              Account
-            </a>
-            <ul id="dropdown-menu-right" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><%= link_to "Profile", current_user , class: "dropdown-item" %></li>
-              <li><%= link_to "Settings", '#' , class: "dropdown-item" %></li>
-              <li class="drop-divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
-              </li>
-            </ul>
-          <% else %>
-          </li>
-          <li><%= link_to "Log in", login_path, class:"nav-link active" %></li>
-        </ul>
-      <% end %>
+                Account
+              </a>
+              <ul id="dropdown-menu-right" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><%= link_to "Profile", current_user , class: "dropdown-item" %></li>
+                <li><%= link_to "Settings", '#' , class: "dropdown-item" %></li>
+                <li class="drop-divider"></li>
+                <li>
+                  <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
+                </li>
+              </ul>
+            <% else %>
+            </li>
+            <li><%= link_to "Log in", login_path, class:"nav-link active" %></li>
+          </ul>
+        <% end %>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
