@@ -31,14 +31,13 @@
                 <li><%= link_to "Settings", '#' , class: "dropdown-item" %></li>
                 <li class="drop-divider"></li>
                 <li>
-                  <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
-                </li>
-              </ul>
-            <% else %>
-            </li>
+                  <%= button_to "Log out", logout_path, method: :delete, class: "dropdown-item" %></li>
+              </li>
+            </ul>
+          <% else %>
             <li><%= link_to "Log in", login_path, class:"nav-link active" %></li>
-          </ul>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </nav>
