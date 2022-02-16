@@ -16,6 +16,7 @@ class User < ApplicationRecord
            else
              BCrypt::Engine.cost
            end
+
     BCrypt::Password.create(string, cost:)
   end
 
@@ -32,6 +33,8 @@ class User < ApplicationRecord
 
   # Returns true if the given token is the digest
   def authenticated?(remember_token)
+    return false if remember_digest.nil?
+
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
