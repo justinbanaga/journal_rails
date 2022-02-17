@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<%= render @category %>
+<h2>Tasks</h2>
+<%= @category.tasks.each do |task| %>
+  <ul>
+    <li>
+      <%= task.name %>
+    </li>
+    <li>
+      <%= task.description %>
+    </li>
+  </ul>
+<% end %>
+<div>
+  <%= link_to "Edit this category", edit_category_path(@category) %> |
+  <%= link_to "Add task to this category", category_tasks_path(@category) %> |
+  <%= link_to "Back to categories", categories_path %>
+  <%= button_to "Destroy this category", @category, method: :delete %>
+</div>

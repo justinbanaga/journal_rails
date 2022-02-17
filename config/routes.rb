@@ -1,5 +1,9 @@
 # inside config/routes.rb
 Rails.application.routes.draw do
+  resources :categories do
+    resources :tasks
+  end
+
   get 'sessions/new'
   get 'static_pages/home'
   get 'static_pages/help'
