@@ -21,39 +21,51 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = @category.tasks.build(task_params)
-
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
+    @task.user_id = current_user.id
+    if @task.save
+      redirect_to category_tasks_path(@category), notice: 'Task was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
+    # respond_to do |format|
+    #   if @task.save
+    #     format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully created.' }
+    #     format.json { render :show, status: :created, location: @task }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @task.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
+    if @task.update(task_params)
+      redirect_to category_tasks_path(@category), notice: 'Task was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
     end
+
+    # respond_to do |format|
+    #   if @task.update(task_params)
+    #     format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @task }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @task.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /tasks/1 or /tasks/1.json
   def destroy
     @task.destroy
+    redirect_to category_tasks_path(@category), notice: 'Task was successfully destroyed.'
 
-    respond_to do |format|
-      format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

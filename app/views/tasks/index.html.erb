@@ -1,23 +1,27 @@
 <p style="color: green"><%= notice %></p>
-<h1>Tasks</h1>
+<h1><%=@category.name%> Tasks</h1>
 <div id="tasks">
   <% @tasks.each do |task| %>
-    <%= render task %>
     <p>
-      <%= task.description %>>
+      <strong>Name:</strong>
+      <%= task.name %>
     </p>
     <p>
-      <%= task.category.name %>
+      <strong>Description:</strong>
+      <%= task.desc %>
     </p>
     <p>
-      <%= link_to "Show Category", [@category] %>
-    </p>
-    <p>
-      <%= link_to "Edit Task", edit_category_task_path(@category, task) %>
-    </p>
-    <p>
-      <%= link_to 'Destroy Task', [@category, task], method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-  <% end %>
-</div>
-<%= link_to 'New Task', new_category_task_path(@category) %>
+      <strong>Due date:</strong>
+      <%= task.due_date %>
+      <p>
+        <%= link_to "Show Category", [@category] %>
+      </p>
+      <p>
+        <%= link_to "Edit Task", edit_category_task_path(@category, task) %>
+      </p>
+      <p>
+        <%= link_to 'Destroy Task', [@category, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
+  </div>
+  <%= link_to 'New Task', new_category_task_path(@category) %>
