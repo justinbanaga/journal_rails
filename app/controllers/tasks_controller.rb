@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :logged_in?
   before_action :get_category
   before_action :set_task, only: %i[show edit update destroy]
 
@@ -27,15 +28,6 @@ class TasksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    # respond_to do |format|
-    #   if @task.save
-    #     format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully created.' }
-    #     format.json { render :show, status: :created, location: @task }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @task.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
@@ -45,27 +37,12 @@ class TasksController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-
-    # respond_to do |format|
-    #   if @task.update(task_params)
-    #     format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @task }
-    #   else
-    #     format.html { render :edit, status: :unprocessable_entity }
-    #     format.json { render json: @task.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /tasks/1 or /tasks/1.json
   def destroy
     @task.destroy
     redirect_to category_tasks_path(@category), notice: 'Task was successfully destroyed.'
-
-    # respond_to do |format|
-    #   format.html { redirect_to category_tasks_path(@category), notice: 'Task was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
   end
 
   private

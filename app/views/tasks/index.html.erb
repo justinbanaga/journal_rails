@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <h1><%=@category.name%> Tasks</h1>
-<div id="tasks">
+<div id="tasks" class="card">
   <% @tasks.each do |task| %>
     <p>
       <strong>Name:</strong>
@@ -14,14 +14,14 @@
       <strong>Due date:</strong>
       <%= task.due_date %>
       <p>
-        <%= link_to "Show Category", [@category] %>
+        <%= link_to "Show Category", [@category], class: 'btn btn-warning' %>
       </p>
       <p>
-        <%= link_to "Edit Task", edit_category_task_path(@category, task) %>
+        <%= link_to "Edit Task", edit_category_task_path(@category, task), class: 'btn btn-primary' %>
       </p>
       <p>
-        <%= link_to 'Destroy Task', [@category, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy Task', [@category, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </p>
     <% end %>
   </div>
-  <%= link_to 'New Task', new_category_task_path(@category) %>
+  <%= link_to 'New Task', new_category_task_path(@category), class: 'btn btn-info' %>

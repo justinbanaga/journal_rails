@@ -10,18 +10,19 @@
     </div>
   <% end %>
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, style: "display: block", class: "col-sm-2 col-form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
   <div>
-    <%= form.label :desc, "Description", style: "display: block" %>
-    <%= form.text_area :desc %>
+    <%= form.label :desc, "Description", style: "display: block", class: "col-sm-2 col-form-label" %>
+    <%= form.text_area :desc, class: "form-floating form-control input-width" %>
   </div>
   <div>
-    <%= form.label :due_date, style: "display: block" %>
-    <%= form.date_field :due_date %>
+    <%= form.label :due_date, style: "display: block",  class: "col-sm-2 col-form-label" %>
+    <%= form.date_field :due_date, class: "form-control" %>
+    <br>
   </div>
   <div>
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-success" %>
   </div>
 <% end %>

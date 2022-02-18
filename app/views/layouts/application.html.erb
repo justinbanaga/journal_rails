@@ -21,11 +21,12 @@
     -->
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <%= yield %>
+    <div id="profile-background">
+      <%= render 'layouts/header' %>
+      <div class="container">
+        <%= yield %>
+      </div>
       <%= render 'layouts/footer' %>
-      # <%= debug params if Rails.env.development? %>
     </div>
   </body>
 </html>

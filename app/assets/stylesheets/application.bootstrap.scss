@@ -17,6 +17,38 @@ $state-danger-text: #a94442;
 
 /* universal */
 
+body {
+  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+
+  /* Full height */
+  height: 23.5625rem;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Glassmorphism card effect */
+.card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.card h1 {
+  color: white;
+}
+.card label {
+  color: white;
+}
+
+#tasks p {
+  font-weight: 400;
+  color: white;
+}
 #navbar {
   margin-bottom: 15px;
 }
@@ -125,8 +157,15 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  text-align: center;
+
+  margin-top: 0px;
+  padding-top: 0px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
   a {

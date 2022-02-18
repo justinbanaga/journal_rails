@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[index edit update destroy]
+  before_action :logged_in?, only: %i[index edit update destroy]
 
   def new
     @user = User.new
