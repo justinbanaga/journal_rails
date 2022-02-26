@@ -29,6 +29,10 @@ body {
   background-size: cover;
 }
 
+.container {
+  height: 100%;
+}
+
 /* Glassmorphism card effect */
 .card {
   backdrop-filter: blur(16px) saturate(180%);
@@ -45,7 +49,7 @@ body {
   color: white;
 }
 
-#tasks p {
+.tasks p {
   font-weight: 400;
   color: white;
 }
@@ -79,6 +83,11 @@ body {
   line-height: 1.5;
   border-radius: 0.3rem;
   margin-top: 2rem;
+}
+
+.urgent {
+  color: #a94442;
+  display: inline;
 }
 
 body {

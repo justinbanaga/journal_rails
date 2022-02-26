@@ -5,7 +5,11 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = @category.tasks
+    @tasks = if params[:due_date] == Date.today
+               Task.urgent.all
+             else
+               @category.tasks
+             end
   end
 
   # GET /tasks/1 or /tasks/1.json

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
-<h1><%=@category.name%> Tasks</h1>
-<div id="tasks" class="card">
+<h1><%= @category.name%> Tasks </h1>
+<div class="tasks">
   <% @tasks.each do |task| %>
     <p>
       <strong>Name:</strong>
@@ -12,7 +12,9 @@
     </p>
     <p>
       <strong>Due date:</strong>
-      <%= task.due_date %>
+      <em class="<%= 'urgent' if task.due_date == Date.today%>">
+        <%=task.due_date%>
+      </ em>
       <p>
         <%= link_to "Show Category", [@category], class: 'btn btn-warning' %>
       </p>
