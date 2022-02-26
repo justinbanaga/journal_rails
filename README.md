@@ -19,9 +19,8 @@ Journal App built using Ruby on Rails
 -See all Tasks of the Day.<br/>
 
 # ERD
-<div align="center">
-      ![alt text](https://raw.githubusercontent.com/justinbanaga/journal_rails/main/app/assets/images/Screenshot%20journal_erd.png)
-     </div>
+      ![Screenshot journal_erd](https://user-images.githubusercontent.com/89715673/155841635-2fd385df-a017-4de6-aec2-a422812291e5.png)
+ 
 
 
 # Tech Used
