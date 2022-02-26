@@ -7,7 +7,7 @@
 Journal App built using Ruby on Rails
 
 # Features
--Create an Account.<br/>
+-User sign up and login.<br/>
 -Create a Category for Tasks.<br/>
 -Edit Category.<br/>
 -Delete Category.<br/>
