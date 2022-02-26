@@ -18,8 +18,7 @@ Journal App built using Ruby on Rails
 -Show Task.<br/>
 -See all Tasks of the Day.<br/>
 
-# ERD
-      ![Screenshot journal_erd](https://user-images.githubusercontent.com/89715673/155841635-2fd385df-a017-4de6-aec2-a422812291e5.png)
+# ERD![Screenshot journal_erd](https://user-images.githubusercontent.com/89715673/155841635-2fd385df-a017-4de6-aec2-a422812291e5.png)
  
 
 
