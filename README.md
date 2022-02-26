@@ -1,5 +1,5 @@
 <div align="center">
-      <h1> <img src="https://github.com/justinbanaga/journal_rails" width="80px"><br/>Journal App</h1>
+      <h1><br/>Journal App</h1>
      </div>
 
 
@@ -7,15 +7,16 @@
 Journal App built using Ruby on Rails
 
 # Features
--Create a Category for Tasks
--Edit Category
--Delete Category
--Show all Categories
--Create a Task in a Category
--Edit a Task
--Delete a Task
--Show Task
--See all Tasks of the Day
+-Create an Account.<br/>
+-Create a Category for Tasks.<br/>
+-Edit Category.<br/>
+-Delete Category.<br/>
+-Show all Categories.<br/>
+-Create a Task in a Category.<br/>
+-Edit a Task.<br/>
+-Delete a Task.<br/>
+-Show Task.<br/>
+-See all Tasks of the Day.<br/>
 
 
 # Tech Used
